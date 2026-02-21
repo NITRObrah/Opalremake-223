@@ -12,11 +12,26 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+        }
+
+        .header {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 0 0 15px #00ff88;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #00ff88;
+            filter: drop-shadow(0 0 10px #00ff88);
         }
 
         button.run {
@@ -36,24 +51,20 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="favicon.png" alt="sight.w" class="logo">
+        <span>sight.w</span>
+    </div>
+
     <script>
         window.onload = function() {
-            // Creates new ABC
             var page = new ABC({
-                "type": "blank", // Blank, blob, or overwrite
-                "url": "load.html" // Local file path
+                "type": "blank",
+                "url": "load.html"
             });
-
-            // Set the type
             page.setType("blank");
-
-            // Set the local file path
             page.setUrl("./load.html");
-
-            // Get iframe code
             console.log(page.getCode());
-
-            // Open page
             page.open();
         };
     </script>
